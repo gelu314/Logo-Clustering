@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from skimage.feature import hog
 import pandas as pd
 import numpy as np
 import cv2 as cv
