@@ -2,5 +2,4 @@ __pycache__/
 *.pyc
 venv/
 .env
-/data/logos/
 /data/clustering_results.csv
