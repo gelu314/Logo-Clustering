@@ -13,6 +13,8 @@ def setup():
     img_size = (128, 128)
 
     df = pd.read_parquet(file_path)
+    print("Loaded parquet file:")
+    print(df.head())
 
     for i in range(len(df)):
         domain = df['domain'].iloc[i]
@@ -56,4 +58,7 @@ def setup():
             except requests.exceptions.RequestException as e_fallback:
                 print(f"   -> Both services failed for {domain}. Skipping.")
 
+
+if __name__ == "__main__":
+    setup()
 

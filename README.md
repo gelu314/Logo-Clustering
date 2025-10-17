@@ -10,9 +10,10 @@ of the 512 entries are a HSV histogram for color representation.
 
 To run this project:
 
-1. Run setup.py: this will download the logos listed in data/logos.snappy.parquet and
+1. Install libraries from requirements.txt
+2. Run setup.py: this will download the logos listed in data/logos.snappy.parquet and
    store them in data/logos. There should be around 3000 logos downloaded.
-2. Run main.py: here will happen the actual clustering. A file named 'clustering_results.csv'
+3. Run main.py: here will happen the actual clustering. A file named 'clustering_results.csv'
    will be created inside data/, containing a dataframe pairing each logo path to a cluster
    number.
-3. For testing the results, run testing.py
+4. For testing the results, run testing.py
