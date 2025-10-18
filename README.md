@@ -1,12 +1,14 @@
 We do a hybrid clustering algorithm to group logos by similarity. The algorithm is a
 combination of BIRCH with agglomerative clustering, for complexity reasons (we do a
-mini-clustering with BIRCH, which is linear, and then we do agglomerative clustering
-on these mini-clusters, which is quadratic in the number of mini-clusters, but we can
-controll this number). After preprocessing each image (most importantly rescaling it
-to 128x128), we embed it in a high dimensional euclidean space (1031 dimensions), where
-the first 512 entries represent the linearized HOG (histogram of oriented gradients,
-for edge recognintion) of the logo, the next 7 entries are the HU moments, and the rest
-of the 512 entries are a HSV histogram for color representation.
+mini-clustering with BIRCH, which is linear in the number of points, and then we do
+agglomerative clusteringon these mini-clusters, which is quadratic in the number of 
+mini-clusters, but we can control this number). After preprocessing each image (most
+importantly rescaling it to 128px x 128px), we embed it in a high dimensional euclidean
+space (1031 dimensions), where the first 512 entries represent the linearized HOG 
+(histogram of oriented gradients, for edge recognintion) of the logo, the next 7 entries
+are the HU moments, and the rest of the 512 entries are a HSV histogram for color representation.
+We also use dimensionality reduction, so that the visual features are represented in 
+100 dimensions, after which the clustering algorithm takes place
 
 To run this project:
 
